@@ -8,7 +8,7 @@ using namespace std;
 
 class Player{
 public:
-	Player();
+	Player(int position);
 	~Player();
 	void Tokenize(const string& line, vector<string>& arguments);
 	

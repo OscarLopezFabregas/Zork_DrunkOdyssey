@@ -6,12 +6,11 @@
 #include "world.h"
 
 using namespace std;
-Player myplayer;
-World myworld;
 
 
 
 int main() {
+	World* myworld = new World();
 	string playerInput;
 	vector<string> args;
 	
@@ -23,16 +22,22 @@ int main() {
 	cout << "The problem is that now, the drinking is hitting hard... " << endl;
 	cout << "Your girlfriend is so mad at you, your life is in extrem danger if you the move the dumbass out of the bar and go home." << endl;
 	cout << "----------------------------------------" << endl;
-
-	cout << "What are you gonna do?"<<endl;
-	cout << ">";
-	getline(cin, playerInput);
-	myplayer.Tokenize(playerInput, args);
-	
-	if (args[0] == "look") 
+	while (playerInput != "quit")
 	{
-		myworld.Look(args);
-	}
+		args.clear();
+		cout << "What are you gonna do?" << endl;
+		cout << ">";
+		getline(cin, playerInput);
+		myworld->myplayer->Tokenize(playerInput, args);
 
+		if (args[0] == "look")
+		{
+			myworld->Look(args, myworld->myplayer->position);
+		}
+		if (args[0] == "go")
+		{
+			myworld->Go(args);
+		}
+	}
 	system("pause");
 }

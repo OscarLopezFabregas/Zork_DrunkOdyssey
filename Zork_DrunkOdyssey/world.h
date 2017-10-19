@@ -3,6 +3,8 @@
 #include <list>
 #include "entity.h"
 #include "room.h"
+#include "player.h"
+#include "exit.h"
 
 using namespace std;
 
@@ -12,8 +14,11 @@ public:
 	World();
 	~World();
 
-void Look(vector<string> arguments);
+	void Look(const vector<string> args,const int position);
+	void Go(const vector<string> args);
 
 public:
 	list<Room*> rooms;
+	list<Exit*> exits;
+	Player* myplayer;
 };
