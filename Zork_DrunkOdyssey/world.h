@@ -14,7 +14,7 @@ public:
 	World();
 	~World();
 
-	void Look(const vector<string> args,const int position);
+	void Look(const vector<string> args);
 	void Go(const vector<string> args);
 
 public:

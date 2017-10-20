@@ -26,7 +26,7 @@ int main() {
 
 		if (args[0] == "look")
 		{
-			myworld->Look(args, myworld->myplayer->position);
+			myworld->Look(args);
 		}
 		if (args[0] == "go")
 		{
