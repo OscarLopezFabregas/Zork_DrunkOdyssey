@@ -7,10 +7,11 @@
 
 using namespace std;
 void intro();
-
+void command(vector<string> args, World* world);
+World* myworld = new World();
 
 int main() {
-	World* myworld = new World();
+	
 	string playerInput;
 	vector<string> args;
 	
@@ -23,20 +24,14 @@ int main() {
 		cout << ">";
 		getline(cin, playerInput);
 		myworld->myplayer->Tokenize(playerInput, args);
-
-		if (args[0] == "look")
-		{
-			myworld->Look(args);
-		}
-		if (args[0] == "go")
-		{
-			myworld->Go(args);
-		}
+		command(args, myworld);
+	
 	}
 	system("pause");
 }
 
-void intro() {
+void intro() 
+{
 	
 	cout << "----------------------------------------" << endl;
 	cout << "**Welcome to Zork: The Drunk Oddissey**" << endl;
@@ -46,4 +41,19 @@ void intro() {
 	cout << "The problem is that now, the drinking is hitting hard... " << endl;
 	cout << "Your girlfriend is so mad at you, your life is in extrem danger if you the move the dumbass out of the bar and go home." << endl;
 	cout << "----------------------------------------" << endl;
+}
+void command(vector<string> args, World* world)
+{
+	if (args[0] == "look")
+	{
+		myworld->Look(args);
+	}
+	if (args[0] == "go")
+	{
+		myworld->Go(args);
+	}
+	if (args[0] == "take")
+	{
+		myworld->Take(args);
+	}
 }
