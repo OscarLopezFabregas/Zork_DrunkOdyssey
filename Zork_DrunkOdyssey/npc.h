@@ -5,19 +5,20 @@
 #include <stdio.h>
 
 using namespace std;
-class Item;
+
 
 class Npc {
 public:
-	Npc(int position);
+	Npc(const char* name, int position,  const char* dialogue1, const char* dialogue2, const char* description, bool talk1);
 	~Npc();
 	
 
 
 public:
 	int position;
+	const char* name;
 	const char* description;
-	const char* dialogue;
-
-	//list<Item*> inventory;
+	const char* dialogue1;
+	const char* dialogue2;
+	bool talk1;
 };

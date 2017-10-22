@@ -9,8 +9,6 @@ Player::Player(int position) : position(position)
 {
 }
 
-
-
 Player::~Player(){
 
 }

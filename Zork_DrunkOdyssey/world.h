@@ -3,8 +3,12 @@
 #include <list>
 #include "entity.h"
 #include "room.h"
-#include "player.h"
-#include "exit.h"
+
+
+
+class Npc;
+class Exit;
+class Player;
 
 using namespace std;
 
@@ -23,5 +27,6 @@ public:
 	list<Room*> rooms;
 	list<Exit*> exits;
 	list<Item*> items;
+	list<Npc*> npcs;
 	Player* myplayer;
 };

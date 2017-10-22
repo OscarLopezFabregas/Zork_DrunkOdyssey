@@ -39,7 +39,7 @@ void intro()
 
 	cout << "You just finished  the last drink, the bar is about to close and you should go back home." << endl;
 	cout << "The problem is that now, the drinking is hitting hard... " << endl;
-	cout << "Your girlfriend is so mad at you, your life is in extrem danger if you the move the dumbass out of the bar and go home." << endl;
+	cout << "Your girlfriend is so mad at you, your life is in extrem danger if you do not move the dumbass out of the bar and go home." << endl;
 	cout << "----------------------------------------" << endl;
 }
 void command(vector<string> args, World* world)
@@ -55,5 +55,9 @@ void command(vector<string> args, World* world)
 	if (args[0] == "take")
 	{
 		myworld->Take(args);
+	}
+	if (args[0] == "talk")
+	{
+		myworld->Talk(args);
 	}
 }
