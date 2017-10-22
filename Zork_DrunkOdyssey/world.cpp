@@ -18,7 +18,7 @@ World::World() {
 	//List Rooms---
 	Room* Bar = new Room("bar", "You find yourself at your beloved smoky bar. Only you and the barman still there, at the end of the corridor there is a door with the label <Toilet>", 0);
 	Room* Toilet = new Room("toilet", "The smell of the place almost makes you puke, there is something sparking on the floor...Those are my keys??", 1);
-	Room* Street = new Room("street", "You feel the cold air of the city freezing your chicks, Fuck...I cannot drive now...", 2);// HERE!!
+	Room* Street = new Room("street", "You feel the cold air of the city freezing your chicks, Fuck...I cannot drive now...", 2);
 	rooms.push_back(Bar);
 	rooms.push_back(Toilet);
 	rooms.push_back(Street);
@@ -34,15 +34,15 @@ World::World() {
 	exits.push_back(StreetBar);
 
 	//List Items---
-	Item* Beer = new Item("beer", "My beer isn't finished yet, I may want it later...", false, 0);
-	Item* HomeKeys = new Item("keys", "What the fuck?! How can I forget my keys in this shitty toilet, with them I can go back home", false, 1);
+	Item* Beer = new Item("beer", "My beer isn't finished yet, I may want it later...", 0);
+	Item* HomeKeys = new Item("keys", "What the fuck?! How can I forget my keys in this shitty toilet, with them I can go back home", 1);
 	items.push_back(Beer);
 	items.push_back(HomeKeys);
 
 	//List NPC
-	Npc* Homeless = new Npc("homeless", 2, "Oh dear folk, I think you shouldn't drive that drunk... What if I give my bike in exchange of the beer you are carrying?", "dialogue2", "description", false);
-	Npc* Girlfriend = new Npc("girlfriend", 3, "", "","", false);
-	Npc* Barman = new Npc("barman", 0, "Hey man! It is time to close, I'll give a plastic glass so you can take your beer with you!", "", "He looks kinda serious... and I know perfectly about the stick he hides behind the bar...", false);
+	Npc* Homeless = new Npc("homeless", 2, "Oh dear folk, I think you shouldn't drive that drunk... What if I give my bike in exchange of the beer you are carrying?", "Thank you so much mate, please take my bike", "description", false, "beer");
+	Npc* Girlfriend = new Npc("girlfriend", 3, "", "","", false, "ring");
+	Npc* Barman = new Npc("barman", 0, "Hey man! It is time to close, I'll give a plastic glass so you can take your beer with you!", "", "He looks kinda serious... and I know perfectly about the stick he hides behind the bar...", false, "");
 	npcs.push_back(Homeless);
 	npcs.push_back(Girlfriend);
 	npcs.push_back(Barman);
@@ -138,10 +138,11 @@ void World::Take(const vector<string> args)
 	{
 		for (list<Item*>::iterator it = items.begin(); it != items.end(); it++)
 		{
-			if ((*it)->location == myplayer->position && args[i]==(*it)->name && !(*it)->taken)
+			if ((*it)->location == myplayer->position && args[i]==(*it)->name && !(*it)->taken && (*it)->nottaken)
 			{
 				
 				(*it)->taken = true;
+				(*it)->nottaken = false;
 				cout << "--------------------------" << endl;
 			    cout << "You have taken the " << (*it)->name << endl;
 				cout << "--------------------------" << endl;
@@ -188,7 +189,23 @@ void World::Talk (const vector<string> args)
 
 void World::Give(const vector<string> args)
 {
-	for (list<Npc)
+	for (int i = 0; i < args.size(); i++)
+	{
+		for (list<Npc*>::const_iterator it = npcs.begin(); it != npcs.cend(); it++)
+		{
+			for (list<Item*>::const_iterator it2 = items.begin(); it2 != items.cend(); it2++)
+			{
+				if (args[i] == (*it)->itemwanted && (*it2)->taken)
+				{
+					(*it2)->taken = false;
+					cout << "--------------------------" << endl;
+					cout << (*it)->dialogue2;
+					cout << "--------------------------" << endl;
+
+				}
+			}
+		}
+	}
 }
 
 void World::Inventory()

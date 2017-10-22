@@ -27,7 +27,6 @@ int main() {
 		command(args, myworld);
 	
 	}
-	system("pause");
 }
 
 void intro() 
@@ -60,8 +59,16 @@ void command(vector<string> args, World* world)
 	{
 		myworld->Talk(args);
 	}
+	if (args[0] == "give")
+	{
+		myworld->Give(args);
+	}
 	if (args[0] == "inventory")
 	{
 		myworld->Inventory();
+	}
+	if (args[0] == "quit")
+	{
+		return;
 	}
 }

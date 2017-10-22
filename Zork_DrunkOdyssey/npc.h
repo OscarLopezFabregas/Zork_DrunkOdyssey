@@ -9,7 +9,7 @@ using namespace std;
 
 class Npc {
 public:
-	Npc(const char* name, int position,  const char* dialogue1, const char* dialogue2, const char* description, bool talk1);
+	Npc(const char* name, int position,  const char* dialogue1, const char* dialogue2, const char* description, bool talk1, const char* itemwanted);
 	~Npc();
 	
 
