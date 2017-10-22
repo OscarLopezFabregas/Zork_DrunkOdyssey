@@ -1,7 +1,7 @@
 #pragma once
 
 class Item {
-
+	
 public:
 	Item(const char* name, const char* description, bool taken, int location);
 	~Item();

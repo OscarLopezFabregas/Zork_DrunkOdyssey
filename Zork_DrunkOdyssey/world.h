@@ -2,10 +2,10 @@
 #include <vector>
 #include <list>
 #include "entity.h"
-#include "room.h"
 
 
-
+class Item;
+class Room;
 class Npc;
 class Exit;
 class Player;
@@ -22,7 +22,9 @@ public:
 	void Go(const vector<string> args);
 	void Take(const vector<string> args);
 	void Talk(const vector<string> args);
-
+	void Give(const vector<string> args);
+	void Inventory();
+	
 public:
 	list<Room*> rooms;
 	list<Exit*> exits;

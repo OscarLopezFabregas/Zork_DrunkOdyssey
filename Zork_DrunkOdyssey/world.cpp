@@ -47,6 +47,7 @@ World::World() {
 	npcs.push_back(Girlfriend);
 	npcs.push_back(Barman);
 
+
 }
 
 World::~World() {
@@ -55,7 +56,6 @@ World::~World() {
 
 void World::Look(const vector<string> args)
 {
-
 	for (int i = 0; i < args.size(); i++)
 	{
 		for (list<Room*>::iterator it = rooms.begin(); it != rooms.end(); it++)
@@ -184,4 +184,20 @@ void World::Talk (const vector<string> args)
 			}
 		}
 	}
+}
+
+void World::Give(const vector<string> args)
+{
+	for (list<Npc)
+}
+
+void World::Inventory()
+{
+	cout << "--------------------------" << endl;
+	for (list<Item*>::const_iterator it = items.begin(); it != items.end(); it++)
+	{
+		if ((*it)->taken) cout << (*it)->name<<endl;
+	}
+	cout << "--------------------------" << endl;
+
 }

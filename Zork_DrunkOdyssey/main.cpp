@@ -60,4 +60,8 @@ void command(vector<string> args, World* world)
 	{
 		myworld->Talk(args);
 	}
+	if (args[0] == "inventory")
+	{
+		myworld->Inventory();
+	}
 }

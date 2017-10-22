@@ -20,5 +20,7 @@ public:
 	const char* description;
 	const char* dialogue1;
 	const char* dialogue2;
+	const char* itemwanted;
 	bool talk1;
+	
 };
