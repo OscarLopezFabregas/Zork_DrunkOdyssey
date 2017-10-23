@@ -10,6 +10,6 @@ public:
 	const char* name = nullptr;
 	const char* description = nullptr;
 	bool taken = false;
-	bool nottaken = true;
+	bool given = false;
 	int location;
 };

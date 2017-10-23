@@ -1,3 +1,9 @@
-﻿  main.cpp
-  Zork_DrunkOdyssey.vcxproj -> C:\Users\PC\Desktop\Master en Creació i Disseny de Videojocs\Zork_DrunkOdyssey\Debug\Zork_DrunkOdyssey.exe
-  Zork_DrunkOdyssey.vcxproj -> C:\Users\PC\Desktop\Master en Creació i Disseny de Videojocs\Zork_DrunkOdyssey\Debug\Zork_DrunkOdyssey.pdb (Partial PDB)
+﻿  world.cpp
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(76): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(89): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(102): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(124): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(156): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(188): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(210): warning C4018: '<': no coinciden signed/unsigned
+LINK : fatal error LNK1168: no se puede abrir C:\Users\PC\Desktop\Master en Creació i Disseny de Videojocs\Zork_DrunkOdyssey\Debug\Zork_DrunkOdyssey.exe para escritura
