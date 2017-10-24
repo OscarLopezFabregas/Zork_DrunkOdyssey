@@ -9,8 +9,8 @@ Player::Player(int position) : position(position)
 {
 }
 
-Player::~Player(){
-
+Player::~Player()
+{
 }
 
 void Player::Tokenize(const string& line, vector<string>& arguments) //method to split a string of multiple words in single words
@@ -26,7 +26,7 @@ void Player::Tokenize(const string& line, vector<string>& arguments) //method to
 	} while (0 != *str++); //do while the content of str is different from 0 
 }
 
-void Player :: ParseCommand(vector<string> args, World* world)
+void Player :: ParseCommand(vector<string> args, World* world) const
 {
 	if (args[0] == "look")
 	{

@@ -9,10 +9,4 @@ description(description), origin(origin),destination(destination), direction(dir
 
 Exit::~Exit()
 {
-	delete[] name;
-	delete[] description;
-	delete[] origin;
-	delete[] destination;
-	delete[] direction;
-	delete[] itemrequired;
 }

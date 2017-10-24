@@ -26,6 +26,8 @@ int main() {
 		myworld->myplayer->ParseCommand(args, myworld);
 	
 	}
+	myworld->~World();
+
 }
 
 void intro() 

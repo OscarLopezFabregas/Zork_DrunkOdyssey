@@ -7,7 +7,12 @@ public:
 	Room(const char* name, const char* description,int position);
 	~Room();
 
-	const char* name;
-	const char* description;
+	void Look();
+
+public:
 	int position;
+	const char* name;
+
+private:
+	const char* description;
 };

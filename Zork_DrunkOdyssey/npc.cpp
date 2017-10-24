@@ -8,5 +8,11 @@ dialogue1(dialogue1),dialogue2(dialogue2), description(description), talk1 (talk
 
 Npc::~Npc()
 {
+}
 
+void Npc::Look()
+{
+	cout << "------------------------------------------------------------------" << endl;
+	cout << description << endl;
+	cout << "------------------------------------------------------------------" << endl;
 }
