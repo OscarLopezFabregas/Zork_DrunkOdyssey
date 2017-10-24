@@ -26,3 +26,34 @@ void Player::Tokenize(const string& line, vector<string>& arguments) //method to
 	} while (0 != *str++); //do while the content of str is different from 0 
 }
 
+void Player :: ParseCommand(vector<string> args, World* world)
+{
+	if (args[0] == "look")
+	{
+		world->Look(args);
+	}
+	if (args[0] == "go")
+	{
+		world->Go(args);
+	}
+	if (args[0] == "take")
+	{
+		world->Take(args);
+	}
+	if (args[0] == "talk")
+	{
+		world->Talk(args);
+	}
+	if (args[0] == "give")
+	{
+		world->Give(args);
+	}
+	if (args[0] == "inventory")
+	{
+		world->Inventory();
+	}
+	if (args[0] == "quit")
+	{
+		return;
+	}
+}

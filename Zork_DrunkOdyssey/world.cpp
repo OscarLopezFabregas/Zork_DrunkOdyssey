@@ -69,6 +69,28 @@ World::World() {
 
 World::~World() {
 
+	for (list<Npc*>::const_iterator it = npcs.begin(); it != npcs.cend(); it++)
+	{
+		delete(*it);
+	}
+
+	for (list<Exit*>::iterator it = exits.begin(); it != exits.cend(); it++)
+	{
+		delete (*it);
+	}
+
+	for (list<Item*>::const_iterator it = items.begin(); it != items.cend(); it++)
+	{
+		delete (*it);
+	}
+
+	for (list<Room*>::iterator it = rooms.begin(); it != rooms.cend(); it++)
+	{
+		delete (*it);
+	}
+
+	delete (myplayer);
+
 }
 
 void World::Look(const vector<string> args)
