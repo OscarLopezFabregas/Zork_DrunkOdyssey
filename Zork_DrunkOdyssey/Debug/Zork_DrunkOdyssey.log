@@ -1,17 +1,10 @@
-﻿  player.cpp
-  main.cpp
-  Generando código...
-  Compilando...
-  world.cpp
-c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(76): warning C4018: '<': no coinciden signed/unsigned
-c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(89): warning C4018: '<': no coinciden signed/unsigned
-c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(102): warning C4018: '<': no coinciden signed/unsigned
+﻿  world.cpp
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(98): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(111): warning C4018: '<': no coinciden signed/unsigned
 c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(124): warning C4018: '<': no coinciden signed/unsigned
-c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(156): warning C4018: '<': no coinciden signed/unsigned
-c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(188): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(146): warning C4018: '<': no coinciden signed/unsigned
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(178): warning C4018: '<': no coinciden signed/unsigned
 c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(210): warning C4018: '<': no coinciden signed/unsigned
-  Generando código...
-  Omitiendo... (no se detectaron cambios relevantes)
-  entity.h
-  Zork_DrunkOdyssey.vcxproj -> C:\Users\PC\Desktop\Master en Creació i Disseny de Videojocs\Zork_DrunkOdyssey\Debug\Zork_DrunkOdyssey.exe
-  Zork_DrunkOdyssey.vcxproj -> C:\Users\PC\Desktop\Master en Creació i Disseny de Videojocs\Zork_DrunkOdyssey\Debug\Zork_DrunkOdyssey.pdb (Partial PDB)
+c:\users\pc\desktop\master en creació i disseny de videojocs\zork_drunkodyssey\zork_drunkodyssey\world.cpp(232): warning C4018: '<': no coinciden signed/unsigned
+  Zork_DrunkOdyssey.vcxproj -> C:\Users\PC\Desktop\Master en Creació i Disseny de Videojocs\Zork_DrunkOdyssey\Zork_DrunkOdyssey\Debug\Zork_DrunkOdyssey.exe
+  Zork_DrunkOdyssey.vcxproj -> C:\Users\PC\Desktop\Master en Creació i Disseny de Videojocs\Zork_DrunkOdyssey\Zork_DrunkOdyssey\Debug\Zork_DrunkOdyssey.pdb (Partial PDB)
