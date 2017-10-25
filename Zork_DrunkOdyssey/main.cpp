@@ -16,7 +16,7 @@ int main() {
 	
 	intro();
 	
-	while (playerInput != "quit")
+	while (!myworld->quit)
 	{
 		args.clear();
 		cout << "What are you gonna do?" << endl;
@@ -26,8 +26,6 @@ int main() {
 		myworld->myplayer->ParseCommand(args, myworld);
 	
 	}
-	myworld->~World();
-
 }
 
 void intro() 
@@ -36,7 +34,6 @@ void intro()
 	cout << "----------------------------------------" << endl;
 	cout << "**Welcome to Zork: The Drunk Oddissey**" << endl;
 	cout << "----------------------------------------" << endl;
-
 	cout << "You just finished  the last drink, the bar is about to close and you should go back home." << endl;
 	cout << "The problem is that now, the drinking is hitting hard... " << endl;
 	cout << "Your girlfriend is so mad at you, your life is in extrem danger if you do not move \nthe dumbass out of the bar and go home." << endl;

@@ -24,7 +24,10 @@ public:
 	void Talk(const vector<string> args);
 	void Give(const vector<string> args);
 	void Drop(const vector<string> args);
+	void Finalfight(const vector<string> args);
+	void Again(const vector<string> args);
 	void Inventory();
+
 	
 public:
 	list<Room*> rooms;
@@ -32,4 +35,5 @@ public:
 	list<Item*> items;
 	list<Npc*> npcs;
 	Player* myplayer;
+	bool quit=false;
 };

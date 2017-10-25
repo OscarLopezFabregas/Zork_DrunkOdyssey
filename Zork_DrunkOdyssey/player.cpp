@@ -3,6 +3,7 @@
 #include "world.h"
 #include "room.h"
 #include "item.h"
+#include<Windows.h>
 
 using namespace std;
 Player::Player(int position) : position(position)
@@ -52,12 +53,24 @@ void Player :: ParseCommand(vector<string> args, World* world) const
 	{
 		world->Drop(args);
 	}
+	if (args[0] == "yes" && position == 4)
+	{
+		world->Finalfight(args);
+	}
 	if (args[0] == "inventory")
 	{
 		world->Inventory();
 	}
+	if (args[0] == "position")
+	{
+		cout << position;
+	}
 	if (args[0] == "quit")
 	{
-		return;
+		cout << "--------------------------" << endl;
+		cout << "Thanks for playing!" << endl;
+		cout << "--------------------------" << endl;
+		Sleep(1000);
+		world->quit = true;
 	}
 }

@@ -7,8 +7,10 @@
 #include "item.h"
 #include "npc.h"
 #include <list>
+#include <string>
 #include <iostream>
 #include <vector>
+#include <windows.h>
 
 using namespace std;
 
@@ -58,7 +60,7 @@ World::World() {
 
 	//List NPC
 	Npc* Homeless = new Npc("homeless", 2, "Oh dear folk, I think you shouldn't drive that drunk... \nWhat if you give me the beer you are carrying?", "Thank you so much mate, please take my bike in exchange", "The old folk looks tired, he looks desesperately at the beer you are carrying", false, "beer");
-	Npc* Girlfriend = new Npc("girlfriend", 3, "", "","", false, "");
+	Npc* Girlfriend = new Npc("girlfriend", 4, "Oh! Look who has arrived... Are you ready for the ULTIMATE FIGHT? (yes/no)", "","", false, "");
 	Npc* Barman = new Npc("barman", 0, "Hey man! It is time to close, I'll give a plastic glass so you can take your beer with you!", "", "He looks kinda serious... and I know perfectly about the stick he hides behind the bar...", false, "");
 	npcs.push_back(Homeless);
 	npcs.push_back(Girlfriend);
@@ -207,18 +209,26 @@ void World::Talk (const vector<string> args)
 		{
 			if (args[i] == (*it)->name && myplayer->position == (*it)->position && !(*it)->talk1)
 			{
+				(*it)->talk1 = true;
 				cout << "--------------------------" << endl;
 				cout << (*it)->dialogue1 << endl;
 				cout << "--------------------------" << endl;
+				return;
 			}
 			if (args[i] == (*it)->name && myplayer->position == (*it)->position && (*it)->talk1) //study if we want the function to act this way...
 			{
 				cout << "--------------------------" << endl;
 				cout << "You already talk to 'that', better not to do so again..." << endl;
 				cout << "--------------------------" << endl;
+				return;
 			}
 		}
 	}
+
+	cout << "--------------------------" << endl;
+	cout << "Are you talking alone? Oh man..., you are definately drunk..." << endl;
+	cout << "--------------------------" << endl;
+
 }
 
 void World::Give(const vector<string> args)
@@ -229,7 +239,7 @@ void World::Give(const vector<string> args)
 		{
 			for (list<Item*>::const_iterator it2 = items.begin(); it2 != items.cend(); it2++)
 			{
-				if (args[i] == (*it)->itemwanted && !(*it2)->given)
+				if (args[i] == (*it)->itemwanted && !(*it2)->given &&myplayer->position == (*it)->position)
 				{
 					(*it2)->given = true;
 					cout << "--------------------------" << endl;
@@ -241,6 +251,9 @@ void World::Give(const vector<string> args)
 		}
 	}
 
+	cout << "--------------------------" << endl;
+	cout << "There is no one willing to accept that! Oh man..., you are definately drunk..." << endl;
+	cout << "--------------------------" << endl;
 
 }
 
@@ -255,7 +268,7 @@ void World::Drop(const vector<string> args)
 				(*it)->location = myplayer->position;
 				(*it)->taken = false;
 				cout << "--------------------------" << endl;
-				cout << "You have taken the " << (*it)->name << endl;
+				cout << "You have drop the " << (*it)->name << endl;
 				cout << "--------------------------" << endl;
 				return;
 			}
@@ -263,6 +276,99 @@ void World::Drop(const vector<string> args)
 	}
 }
 
+void World::Finalfight(const vector<string> args)
+{
+	string answer;
+	cout << "--------------------------" << endl;
+	cout << "Have you been drinking?" << endl;
+	cout << "--------------------------" << endl;
+	cout << ">";
+	cin >> answer;
+	if (answer == "yes")
+	{
+		cout << "--------------------------" << endl;
+		cout << "OK, the first step is to acknoldge it" << endl;
+		cout << "Do you promise not to drink again?" << endl;
+		cout << "--------------------------" << endl;
+		cout << ">";
+		cin >> answer;
+
+		if (answer == "yes")
+		{
+			cout << "--------------------------" << endl;
+			cout << "OK, hope it is true..." << endl;
+			cout << "Do you love me?" << endl;
+			cout << "--------------------------" << endl;
+			cout << ">";
+			cin >> answer;
+			if (answer == "yes")
+			{
+				cout << "--------------------------" << endl;
+				cout << "Great, let's go for more difficult questios?" << endl;
+				cout << "A higher IQ is correlated with more dreams. Yes or no? Nerds are dreamier." << endl;
+				cout << "--------------------------" << endl;
+				cout << ">";
+				cin >> answer;
+				if (answer == "yes")
+				{
+					cout << "--------------------------" << endl;
+					cout << "Nerds are dreamier." << endl;
+					cout << "The average person produces enough saliva in their lifetime to fill up three swimming pools. " << endl;
+					cout << "--------------------------" << endl;
+					cout << ">";
+					cin >> answer;
+					if (answer == "yes")
+					{
+						cout << "--------------------------" << endl;
+						cout << "Nope only 2 swimming pools." << endl;
+						cout << "The average person produces enough saliva in their lifetime to fill up TWO swimming pools. " << endl;
+						cout << "--------------------------" << endl;
+						Again(args);
+					}
+					else if (answer =="no")
+					{
+						cout << "--------------------------" << endl;
+						cout << "You are right! Only 2 swimming pools." << endl;
+						cout << "***THANK YOU FOR PLAYING***" << endl;
+						cout << "--------------------------" << endl;
+						Sleep(1000);
+						quit = true;
+					}
+					else Again(args);
+				}
+				else Again(args);
+			}
+			else Again(args);
+		}
+		else Again(args);
+	}
+	else Again(args);
+}
+
+void World::Again(const vector<string> args)
+{
+	
+		if (myplayer->life != 0)
+		{
+			cout << "--------------------------" << endl;
+			cout << "Don't fucking lie to me you bastard" << endl;
+			cout << "*** You recieved 1 point of psychological damaage***" << endl;
+			cout << "--------------------------" << endl;
+			myplayer->life--;
+			Finalfight(args);
+		}
+		else
+		{
+			cout << "--------------------------" << endl;
+			cout << "You cannot hold the situation anymore. Beaten, there was no other alternative than leaving home and going back to the bar that was about to open :)" << endl;
+			cout << "**THANK YOU FOR PLAYING!!**" << endl;
+			Sleep(1000);
+			cout << "--------------------------" << endl;
+			quit = true;
+
+		}
+	
+}
 void World::Inventory()
 {
 	cout << "--------------------------" << endl;
@@ -273,3 +379,5 @@ void World::Inventory()
 	cout << "--------------------------" << endl;
 
 }
+
+
