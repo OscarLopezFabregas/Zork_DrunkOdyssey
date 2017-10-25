@@ -21,8 +21,8 @@ World::World() {
 	Room* Bar = new Room("bar", "You find yourself at your beloved smoky bar. Only you and the barman still there, at the end of the corridor there is a door with the label <Toilet>", 0);
 	Room* Toilet = new Room("toilet", "The smell of the place almost makes you puke, there is something sparking on the floor...Those are my keys??", 1);
 	Room* Street = new Room("street", "You feel the cold air of the city freezing your chicks, Fuck...I cannot drive now...\nThere is a homeless sitting right outside the bar.", 2);
-	Room* Home = new Room("home", "You are kinda surprised you made home safely, your girlfriend is waiting for you inside in a threatening position", 3);
-	Room* Inside = new Room("inside", "", 4);
+	Room* Home = new Room("home", "You are kinda surprised you made home safely, let's hope your girlfriend is sleeping...", 3);
+	Room* Inside = new Room("inside", "You made up the stairs! Yeah! Ohoh... my girlfriend is awake...", 4);
 	rooms.push_back(Bar);
 	rooms.push_back(Toilet);
 	rooms.push_back(Street);
@@ -136,7 +136,6 @@ void World::Look(const vector<string> args)
 	cout << "--------------------------" << endl;
 
 }
-
 void World::Go(const vector<string> args)
 {
 	for (int i = 0; i < args.size(); i++)
@@ -167,7 +166,6 @@ void World::Go(const vector<string> args)
 	cout << "--------------------------" << endl;
 
 }
-
 void World::Take(const vector<string> args)
 {
 
@@ -200,7 +198,6 @@ void World::Take(const vector<string> args)
 	cout << "--------------------------" << endl;
 
 }
-
 void World::Talk (const vector<string> args)
 {
 	for (int i = 0; i < args.size(); i++)
@@ -230,7 +227,6 @@ void World::Talk (const vector<string> args)
 	cout << "--------------------------" << endl;
 
 }
-
 void World::Give(const vector<string> args)
 {
 	for (int i = 0; i < args.size(); i++)
@@ -256,7 +252,6 @@ void World::Give(const vector<string> args)
 	cout << "--------------------------" << endl;
 
 }
-
 void World::Drop(const vector<string> args)
 {
 	for (int i = 0; i < args.size(); i++)
@@ -275,7 +270,6 @@ void World::Drop(const vector<string> args)
 		}
 	}
 }
-
 void World::Finalfight(const vector<string> args)
 {
 	string answer;
@@ -305,7 +299,7 @@ void World::Finalfight(const vector<string> args)
 			{
 				cout << "--------------------------" << endl;
 				cout << "Great, let's go for more difficult questios?" << endl;
-				cout << "A higher IQ is correlated with more dreams. Yes or no? Nerds are dreamier." << endl;
+				cout << "A higher IQ is correlated with more dreams. Yes or no?" << endl;
 				cout << "--------------------------" << endl;
 				cout << ">";
 				cin >> answer;
@@ -344,7 +338,6 @@ void World::Finalfight(const vector<string> args)
 	}
 	else Again(args);
 }
-
 void World::Again(const vector<string> args)
 {
 	
@@ -379,5 +372,16 @@ void World::Inventory()
 	cout << "--------------------------" << endl;
 
 }
-
+void World::Commands()
+{
+	cout << "--------------------------" << endl;
+	cout << "take\n"
+		<< "go\n"
+		<< "drop\n"
+		<< "talk\n"
+		<< "give\n"
+		<< "look\n"
+		<< "quit\n";
+	cout << "--------------------------" << endl;
+}
 

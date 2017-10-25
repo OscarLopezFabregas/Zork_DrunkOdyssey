@@ -65,6 +65,10 @@ void Player :: ParseCommand(vector<string> args, World* world) const
 	{
 		cout << position;
 	}
+	if (args[0] == "commands")
+	{
+		world->Commands();
+	}
 	if (args[0] == "quit")
 	{
 		cout << "--------------------------" << endl;

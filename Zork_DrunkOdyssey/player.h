@@ -17,5 +17,5 @@ public:
 	
 public:
 	int position;
-	int life = 4;
+	int life = 3;
 };

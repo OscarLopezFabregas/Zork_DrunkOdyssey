@@ -27,7 +27,7 @@ public:
 	void Finalfight(const vector<string> args);
 	void Again(const vector<string> args);
 	void Inventory();
-
+	void Commands();
 	
 public:
 	list<Room*> rooms;
