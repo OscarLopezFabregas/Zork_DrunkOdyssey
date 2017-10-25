@@ -48,6 +48,10 @@ void Player :: ParseCommand(vector<string> args, World* world) const
 	{
 		world->Give(args);
 	}
+	if (args[0] == "drop")
+	{
+		world->Drop(args);
+	}
 	if (args[0] == "inventory")
 	{
 		world->Inventory();

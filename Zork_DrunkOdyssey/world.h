@@ -23,6 +23,7 @@ public:
 	void Take(const vector<string> args);
 	void Talk(const vector<string> args);
 	void Give(const vector<string> args);
+	void Drop(const vector<string> args);
 	void Inventory();
 	
 public:

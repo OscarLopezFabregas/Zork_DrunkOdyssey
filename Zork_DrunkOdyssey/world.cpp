@@ -244,6 +244,24 @@ void World::Give(const vector<string> args)
 
 }
 
+void World::Drop(const vector<string> args)
+{
+	for (int i = 0; i < args.size(); i++)
+	{
+		for (list<Item*>::iterator it = items.begin(); it != items.end(); it++)
+		{
+			if (args[i] == (*it)->name && (*it)->taken)
+			{
+				(*it)->location = myplayer->position;
+				(*it)->taken = false;
+				cout << "--------------------------" << endl;
+				cout << "You have taken the " << (*it)->name << endl;
+				cout << "--------------------------" << endl;
+				return;
+			}
+		}
+	}
+}
 
 void World::Inventory()
 {
